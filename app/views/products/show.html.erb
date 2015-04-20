@@ -1,3 +1,7 @@
+<div style="text-align:center;">
+<p>Name: <%= @product.name %> <br />
+Price: $<%= @product.formatted_price %></p>
+
 <% if current_user %>
   <h4>New Review</h4>
 
@@ -23,5 +27,7 @@
   <% end %>
 
 <% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
+  <p>Please <%= link_to 'log in', new_session_path %> to add a review.</p>
 <% end %>
+<p><%= link_to 'Back', products_path %></p>
+</div>

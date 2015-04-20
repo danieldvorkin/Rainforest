@@ -1,2 +1,9 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1 style="text-align:center;">Welcome to the HomePage</h1>
+<p style="text-align:center;"><%= link_to '+ New Item', "/products/new" %></p><hr />
+
+<% @products.each do |product| %>
+  <p style="text-align:center;">Name:<%= link_to product.name, "/products/#{product.id}" %><br>
+		 Description: <%= product.description %> <br>
+		 Price($): <%= product.formatted_price %> <br>
+		 <%= link_to 'Edit', "/products/#{product.id}/edit" %></p><hr />
+<% end %>
