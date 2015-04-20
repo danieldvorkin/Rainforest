@@ -1,5 +1,6 @@
-<h1>Reviews#show</h1>
-<p>Reviews for <%= @product.name %></p>
+<div style="text-align:center;">
+<h1>Reviews Page</h1>
+<p>Reviews for <%= @product.id %></p>
 
 <% @product.reviews.each do |review| %>
 	<p>
@@ -7,7 +8,10 @@
 		<br>
 		<% if review.user != nil %>
 			<em> by <%= review.user.email %></em>
-			Aded on: <%= review.created_at %>
+			Added on: <%= review.created_at %>
 		<% end %>
 	</p>
 <% end %>
+
+<%= link_to 'Back', products_path %>
+</div>
