@@ -1,6 +1,6 @@
 <div style="text-align:center;">
 <h2>Reviews for item: <u><%= @product.name %></u></h2><hr />
-
+<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 <div style="color: black;">
 	<%= render "form" %>
 </div>
@@ -16,5 +16,4 @@
 	</p>
 	<hr style="width:40px;"/>
 <% end %>
-<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 </div>
