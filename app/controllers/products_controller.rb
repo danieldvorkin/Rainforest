@@ -12,7 +12,11 @@ class ProductsController < ApplicationController
   end
 
   def new
-  	@product = Product.new
+    if !current_user
+      redirect_to new_session_path
+    else
+  	 @product = Product.new
+    end
   end
 
   def edit

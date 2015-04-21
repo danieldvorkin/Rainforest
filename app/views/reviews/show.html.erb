@@ -1,17 +1,20 @@
 <div style="text-align:center;">
-<h1>Reviews Page</h1><hr>
-<h2>Reviews for <%= @product.name %></h2>
+<h2>Reviews for item: <u><%= @product.name %></u></h2><hr />
 
-<% @product.reviews.each do |review| %>
+<div style="color: black;">
+	<%= render "form" %>
+</div>
+
+<% @product.reviews.order("created_at DESC").each do |review| %>
 	<p>
 		<% if review.user != nil %>
+			<h4 style="color:blue;"><%= review.comment %></h4>
 			<em>by <b><%= review.user.name %></b></em>
 			<u>Added on: <%= review.created_at %></u>
-		<% end %><br>
-		<h4><%= review.comment %></h4>
+		<% end %>
+		<br>
 	</p>
 	<hr style="width:40px;"/>
 <% end %>
-
 <p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 </div>

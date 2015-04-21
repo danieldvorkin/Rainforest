@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def show
     @product = load_product
-  	@review = Review.find(params[:id])
+  	@review = Review.new
   end
 
   def create
@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   	@review.user = current_user
 
   	if @review.save
-  		redirect_to products_path, notice: 'Review created successfully'
+  		redirect_to product_review_path(@product, @review), notice: 'Review created successfully'
   	else
   		render 'products/show'
   	end
