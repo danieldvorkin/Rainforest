@@ -1,10 +1,10 @@
 <div style="text-align:center;">
 <h2>Reviews for item: <u><%= @product.name %></u></h2><hr />
-<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
+
 <div style="color: black;">
 	<%= render "form" %>
 </div>
-
+<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 <% @product.reviews.order("created_at DESC").each do |review| %>
 	<p>
 		<% if review.user != nil %>
