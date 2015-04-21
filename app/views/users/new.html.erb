@@ -1,5 +1,5 @@
+<div style="text-align:center; color: black;">
 <h1> Sign Up </h1>
-
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 		<div class="error_messages">
@@ -12,22 +12,18 @@
 		</div>
 	<% end %>
 	<div class="field">
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</div>
+		<%= f.text_field :name, placeholder: "Name" %>
+	</div><br>
 	<div class="field">
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
-	</div>
+		<%= f.text_field :email, placeholder: "Email" %>
+	</div><br>
 	<div class="field">
-		<%= f.label :password %><br />
-		<%= f.password_field :password %>
-	</div>
+		<%= f.password_field :password, placeholder: "Choose a password" %>
+	</div><br>
 	<div class="field">
-		<%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation %>
-	</div>
+		<%= f.password_field :password_confirmation, placeholder: "Repeat password" %>
+	</div><br>
 	<div class="actions"><%= f.submit %></div><br />
-	<%= link_to 'Back', "/products/" %>
+	<div class="btn btn-default"><%= link_to 'Back', "/products/" %></div>
 <% end %>
-
+</div>

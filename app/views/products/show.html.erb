@@ -1,6 +1,6 @@
-<div style="text-align:center;">
-<p>Name: <%= @product.name %> <br />
-Price: $<%= @product.formatted_price %></p>
+<div style="text-align:center; color: black;">
+<h1>Name: <%= @product.name %></h1>
+<h2 style="color: Green;"><u>Price: $<%= @product.formatted_price %></u></h2>
 
 <% if current_user %>
   <h4>New Review</h4>
@@ -11,7 +11,9 @@ Price: $<%= @product.formatted_price %></p>
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
         <ul>
           <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li>
+            <%= msg %>
+          </li>
           <% end %>
         </ul>
       </div>
@@ -19,7 +21,7 @@ Price: $<%= @product.formatted_price %></p>
     
     <div class="field">
       <%= f.label :comment %><br />
-      <%= f.text_area :comment %>
+      <%= f.text_area :comment, size: "45x5"%>
     </div>
     <div class="actions">
       <%= f.submit %>
@@ -29,5 +31,5 @@ Price: $<%= @product.formatted_price %></p>
 <% else %>
   <p>Please <%= link_to 'log in', new_session_path %> to add a review.</p>
 <% end %>
-<p><%= link_to 'Back', products_path %></p>
+<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 </div>

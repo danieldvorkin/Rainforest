@@ -9,14 +9,13 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
   <title>Rainforest</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p style="text-align:center;" class="userinfo">
+  <p style="text-align:center; color: Black;" class="userinfo well">
     <% if current_user %>
       Signed in - 
       <%= current_user.name %> -  
@@ -30,7 +29,6 @@
 
 <%= yield %>
   <div style="text-align:center;">
-  <hr />
 	<% if flash[:notice] %>
     <p id="notice">
       <%= flash[:notice] %>
