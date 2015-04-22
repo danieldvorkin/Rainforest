@@ -42,6 +42,7 @@
               Signed in as 
                 <%= current_user.name %>
                 <%= link_to "Log out", session_path("current"), :method => :delete %>
+                <%= link_to "Profile", user_path(current_user.id) {link_to('Profile', user_path(current_user.id), class: 'active')} %>
             </p>
           <% else %>
             <%= form_tag "/sessions", method: "POST", class: "navbar-form navbar-right" do |f| %>
