@@ -1,6 +1,7 @@
 <div style="text-align:center; color: black;">
 <h1>Please Log In </h1>
 
+<div class="well">
 <%= form_tag sessions_path, method: :post do %>
 	<div class="field">
 		<%= label_tag :email %><br />
@@ -13,4 +14,5 @@
 	<div class="actions"><%= submit_tag "Log in" %></div><br />	
 		<p class="btn btn-default"><%= link_to 'Back', "/products/" %></p>
 <% end %>
+</div>
 </div>

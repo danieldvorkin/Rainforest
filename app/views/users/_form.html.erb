@@ -1,5 +1,4 @@
-<div style="text-align:center; color: black;">
-<h1> Sign Up </h1>
+<div style="text-align:center; color: black;"><br>
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 		<div class="error_messages">
@@ -13,16 +12,16 @@
 	<% end %>
 	<div class="field">
 		<%= f.text_field :name, placeholder: "Name" %>
-	</div><br>
+	</div>
 	<div class="field">
 		<%= f.text_field :email, placeholder: "Email" %>
 	</div><br>
 	<div class="field">
-		<%= f.text_area :about_me, placeholder: "A little bit about you....", size: "25x25" %>
+		<%= f.text_area :about_me, placeholder: "A little bit about you....", size: "45x10" %>
 	</div><br>
 	<div class="field">
 		<%= f.password_field :password, placeholder: "Choose a password" %>
-	</div><br>
+	</div>
 	<div class="field">
 		<%= f.password_field :password_confirmation, placeholder: "Repeat password" %>
 	</div><br>

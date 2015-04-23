@@ -68,8 +68,31 @@
             <p><%= current_user.about_me %></p>
           </div>
         </div>
+      </div>
+    <div class="col-sm-9" contenteditable="false" style="">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= current_user.name %>'s Reviews</div>
+          <div class="panel-body">
+            <p>
+              <% current_user.reviews.order("created_at DESC").each do |review| %>
+              <p>
+                <% if review.user != nil %>
+                  <% if review.product != nil %>
+                    <h4 style="color:blue;"><%= review.comment %></h4>
+                    <h5 style="color:red;"><%= review.product.name %></h5>
+                    <em>by <b><%= review.user.name %></b></em>
+                    <u>Added on: <%= review.created_at %></u>
+                  <% end %>
+                <% end %>
+              <br>
+              </p>
+            <hr style="width:40px;"/>
+            <% end %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  <script src="/plugins/bootstrap-pager.js"></script>
+  </div>
+<script src="/plugins/bootstrap-pager.js"></script>
 </div>
