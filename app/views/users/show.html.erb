@@ -25,18 +25,18 @@
           <li class="list-group-item text-muted" contenteditable="false">User Details</li>
           <li class="list-group-item text-right">
             <span class="pull-left">
+              <strong class="">Name: </strong>
+            </span><%= current_user.name %>
+          </li>
+          <li class="list-group-item text-right">
+            <span class="pull-left">
               <strong class="">Joined: </strong>
-            </span><%= current_user.created_at %>
+            </span><%= current_user.created_at.to_formatted_s(:long_ordinal) %>
           </li>
           <li class="list-group-item text-right">
             <span class="pull-left">
               <strong class="">Updated: </strong>
-            </span><%= current_user.updated_at %>
-          </li>
-          <li class="list-group-item text-right">
-            <span class="pull-left">
-              <strong class="">Name: </strong>
-            </span><%= current_user.name %>
+            </span><%= current_user.updated_at.to_formatted_s(:long_ordinal) %>
           </li>
           <li class="list-group-item text-right">
             <span class="pull-left">
@@ -81,12 +81,11 @@
                     <h4 style="color:blue;"><%= review.comment %></h4>
                     <h5 style="color:red;"><%= review.product.name %></h5>
                     <em>by <b><%= review.user.name %></b></em>
-                    <u>Added on: <%= review.created_at %></u>
+                    <p>Submitted: <u><%= review.created_at.to_formatted_s(:long_ordinal) %></u></p>
                   <% end %>
                 <% end %>
               <br>
               </p>
-            <hr style="width:40px;"/>
             <% end %>
             </p>
           </div>

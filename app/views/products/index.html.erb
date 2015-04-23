@@ -1,6 +1,7 @@
 <div style="text-align:center;">
 	<h1> AP :: Uniforms</h1>
 	<hr />
+	<% if current_user %>
 	<div class="container">
 		<div class="row">	
 			<% @products.order("created_at DESC").each do |product| %>
@@ -27,4 +28,7 @@
 			<% end %>
 		</div>
 	</div>
+	<% elsif !current_user %>
+		<h1>Please sign up to view products</h1>
+	<% end %>
 </div>
