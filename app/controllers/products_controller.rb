@@ -27,7 +27,8 @@ class ProductsController < ApplicationController
   	@product = Product.new(product_params)
 
   	if @product.save
-      # @product.created_by_id = current_user.id
+      @product.created_by_id = current_user.id
+      @product.save
   		redirect_to products_url
   	else
   		render :new

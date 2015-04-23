@@ -63,7 +63,7 @@
     <!--/col-3-->
     <div class="col-sm-9" contenteditable="false" style="">
       <div class="panel panel-default">
-        <div class="panel-heading">About <%= current_user.name %></div>
+        <div class="panel-heading">About You</div>
           <div class="panel-body">
             <p><%= current_user.about_me %></p>
           </div>
@@ -71,7 +71,7 @@
       </div>
     <div class="col-sm-9" contenteditable="false" style="">
       <div class="panel panel-default">
-        <div class="panel-heading"><%= current_user.name %>'s Reviews</div>
+        <div class="panel-heading">Reviews</div>
           <div class="panel-body">
             <p>
               <% current_user.reviews.order("created_at DESC").each do |review| %>
