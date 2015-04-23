@@ -41,8 +41,12 @@
             <p class="navbar-text navbar-right">
               Signed in as 
                 <%= current_user.name %>
-                <%= link_to "Log out", session_path("current"), :method => :delete %>
-                <%= link_to "Profile", user_path(current_user.id) {link_to('Profile', user_path(current_user.id), class: 'active')} %>
+                <p class="navbar-text navbar-right">
+                  <%= link_to "Log out", session_path("current"), :method => :delete %>
+                </p>
+                <p class="navbar-text navbar-right">
+                  <%= link_to "Profile", user_path(current_user.id) {link_to('Profile', user_path(current_user.id), class: 'active')} %>
+                </p>
             </p>
           <% else %>
             <%= form_tag "/sessions", method: "POST", class: "navbar-form navbar-right" do |f| %>
@@ -56,13 +60,8 @@
               <a href="/users/new">Sign Up</a>
             <% end %>
           <% end %>
-          <% if flash[:notice] %>
-            <p class="navbar-text navbar-right" id="notice">
-              <%= flash[:notice] %>
-            </p>
-          <% end %>
           <% if flash[:alert] %>
-            <p class="navbar-text navbar-right" id="alert">
+            <p class="navbar-text navbar-left" id="alert">
               <%= flash[:alert] %>
             </p>
           <% end %>

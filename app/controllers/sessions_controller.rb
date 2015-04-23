@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
-  	# we dont need to instantiate anything here 
-  	# because were not adding a new user
+  	
   end
 
   def create
