@@ -21,6 +21,9 @@
 	<div class="field">
 		<%= f.number_field :price_in_cents, placeholder: "Price in cents"%>
 	</div><br />
+	<div class="field">
+		<%= f.file_field :avatar, :class => "btn" %>
+	</div><br>
 	<div class="actions">
 		<%= f.submit %>
 	</div>

@@ -1,6 +1,7 @@
 <div style="text-align:center; color: black;">
 <h1>Name: <%= @product.name %></h1>
 <h2 style="color: Green;"><u>Price: $<%= @product.formatted_price %></u></h2>
+<h3 style="color: Green;"><u>Description: <%= @product.description %></u></h3>
 
 <% if current_user %>
   <h4>New Review</h4>

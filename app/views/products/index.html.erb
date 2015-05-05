@@ -9,15 +9,16 @@
 		<% end %>
 	</div>
 	<h1><small style="color:black;"><%= page_entries_info @products %></small></h1>
+	<%= paginate @products, :theme => 'twitter-bootstrap-3' %>
 	<hr />
 		<div class="container" style="color:black;">
 			<div class="row col-lg-12" style="color: black;">
 				<div id="products">
 					<%= render @products %>
 				</div>
-				<%= paginate @products, :theme => 'twitter-bootstrap-3' %>
 			</div>
-		</div>
+		<%= paginate @products, :theme => 'twitter-bootstrap-3' %>
+	</div>
 	<% elsif !current_user %>
 		<h1 style="color:black;" class="well"><span style="color:red;">Welcome to AP Uniforms,</span> please sign-up to <span style="color:orange;">view</span>/<span style="color:green;">add</span>/<span style="color:purple;">remove</span> content and <span style="color:blue;">leave reviews.</span></h1>
 	<% end %>
