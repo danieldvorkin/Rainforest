@@ -1,0 +1,7 @@
+<div class="thumbnail col-lg-6">
+	<%= link_to product_path(product.id) do %>
+	    <h2><%= product.name %></h2>
+	    <h3>$<%= product.formatted_price %></h3>
+	  <% end %>
+	<p><%= truncate(product.description, length: 70) %></p>
+</div>
