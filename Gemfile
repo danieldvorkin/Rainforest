@@ -9,6 +9,7 @@ gem 'rails', '4.2.1'
 gem 'pg'
 gem 'activerecord-reset-pk-sequence'
 gem "paperclip", "~> 4.2"
+gem "ruby-progressbar"
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

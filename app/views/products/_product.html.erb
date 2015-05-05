@@ -4,5 +4,5 @@
 	    <%= image_tag product.avatar.url(:medium) %>
 	    <h4>$<%= product.formatted_price %></h4>
 	  <% end %>
-	<p><%= truncate(product.description, length: 30) %></p>
+	<p>Version#: <%= product.description %></p>
 </div>

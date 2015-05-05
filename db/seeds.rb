@@ -5,13 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-50.times do
+print "Progress: "
+100.times do
 	Product.create(
-		name: Faker::Commerce.product_name,
-		description: Faker::Hacker.say_something_smart,
+		name: Faker::App.name,
+		description: Faker::App.version,
 		price_in_cents: rand(99..9999),
 		avatar: Faker::Avatar.image
 	)
-	print "FUCK YOU!!!!!"
+	print "*"
 end
+print "\n"
+print "Seed Complete: 100"
