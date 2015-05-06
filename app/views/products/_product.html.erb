@@ -1,8 +1,9 @@
 <div class="thumbnail col-lg-4">
 	<%= link_to product_path(product.id) do %>
 	    <h3><%= product.name %></h3>
-	    <%= image_tag product.avatar.url(:medium) %>
+	    <%= image_tag product.avatar.url(:thumb) %>
 	    <h4>$<%= product.formatted_price %></h4>
 	  <% end %>
 	<p>Version#: <%= product.description %></p>
+	<%= link_to "Delete", "/products/#{product.id}", method: :delete, data: {confirm: "Are you sure?"} %>
 </div>

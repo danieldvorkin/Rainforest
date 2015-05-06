@@ -1,0 +1,11 @@
+<% @product.reviews.order("created_at DESC").each do |review| %>
+	<p>
+		<% if review.user != nil %>
+			<h4 style="color:blue;"><%= review.comment %></h4>
+			<em>by <b><%= review.user.name %></b></em>
+			<u>Added on: <%= review.created_at.to_formatted_s(:long_ordinal) %></u>
+		<% end %>
+		<br>
+	</p>
+	<hr style="width:40px;"/>
+<% end %>

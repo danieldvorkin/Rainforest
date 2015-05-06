@@ -1,20 +1,16 @@
 <div style="text-align:center;">
-<h2>Reviews for item: <u><%= @product.name %></u></h2>
-<h3><u>Description: </u></h3><p><%= @product.description %></p>
+	
+	<h2>Reviews for item: <br><u><%= @product.name %></u></h2>
+		<%= image_tag @product.avatar.url(:medium) %>
+	<h3><u>Version: </u></h3><p><%= @product.description %></p>
 
-<div style="color: black;">
-	<%= render "form" %>
-</div>
-<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
-<% @product.reviews.order("created_at DESC").each do |review| %>
-	<p>
-		<% if review.user != nil %>
-			<h4 style="color:blue;"><%= review.comment %></h4>
-			<em>by <b><%= review.user.name %></b></em>
-			<u>Added on: <%= review.created_at.to_formatted_s(:long_ordinal) %></u>
-		<% end %>
-		<br>
-	</p>
-	<hr style="width:40px;"/>
-<% end %>
+	<div style="color: black;">
+		<%= render "form" %>
+	</div>
+
+	<p class="btn btn-default"><%= link_to 'Back', products_path %></p>
+	
+	<div id="review-list">
+		<%= render :partial => "reviews" %>
+	</div>
 </div>

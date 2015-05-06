@@ -1,15 +1,30 @@
 <div style="text-align:center; color: black;">
 <h1>Name: <%= @product.name %></h1>
+<%= image_tag @product.avatar.url(:medium) %>
 <h2 style="color: Green;"><u>Price: $<%= @product.formatted_price %></u></h2>
-<h3 style="color: Green;"><u>Description: <%= @product.description %></u></h3>
-
+<h3 style="color: Green;"><u>Version: <%= @product.description %></u></h3>
+<hr />
+<div id="review-list">
+	<% @product.reviews.order("created_at DESC").each do |review| %>
+		<p>
+			<% if review.user != nil %>
+				<h4 style="color:blue;"><%= review.comment %></h4>
+				<em>by <b><%= review.user.name %></b></em>
+				<u>Added on: <%= review.created_at.to_formatted_s(:long_ordinal) %></u>
+			<% end %>
+			<br>
+		</p>
+		<hr style="width:40px;"/>
+	<% end %>
+</div>
 <% if current_user %>
   <h4>New Review</h4>
   <div style="color: black;">
-  <%= render "reviews/form" %>
+  	<%= render "reviews/form" %>
   </div>
 <% else %>
   <p>Please <%= link_to 'log in', new_session_path %> to add a review.</p>
 <% end %>
 <p class="btn btn-default"><%= link_to 'Back', products_path %></p>
 </div>
+
